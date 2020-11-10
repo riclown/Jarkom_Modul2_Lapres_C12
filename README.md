@@ -23,8 +23,7 @@
 * [Soal 14](#soal-14)
 * [Soal 15](#soal-15)
 
-## Display Filter (Soal 1 - 10)
-Soal 1-5 dan 10 memiliki Wireshark Capture File yang sama. Soal 6, 7, 9 memiliki Wireshark Capture File yang sama. Soal 8 memiliki Wireshark Capture File tersendiri.
+## DNS (Soal 1 - 10)
 
 ## Soal 1
 
@@ -51,7 +50,7 @@ Soal 1-5 dan 10 memiliki Wireshark Capture File yang sama. Soal 6, 7, 9 memiliki
 ## Soal 10
 
 
-## Capture Filter (Soal 11 - 15)
+## Web Server (Soal 11 - 15)
 
 
 ## Soal 11
@@ -68,5 +67,8 @@ Soal 1-5 dan 10 memiliki Wireshark Capture File yang sama. Soal 6, 7, 9 memiliki
 
 ## Soal 15
 
+## Soal 16
+
+## Soal 17
 
 ## Kendala yang  dihadapi saat pengerjaan
