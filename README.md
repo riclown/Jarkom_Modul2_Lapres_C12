@@ -125,9 +125,74 @@ host -t PTR 10.151.77.106
 
 ## Soal 5
 
+* Lakukan konfigurasi pada uml *MALANG* dan lakukan edit file **/etc/bind/named.conf.local**, sehingga menjadi
+
+![Img 17](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/5.0.jpg)
+
+Setelah itu dapat melakukan `service bind9 restart`
+
+![Img 18](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/5.1.jpg)
+
+* Berikutnya pada uml *MOJOKERTO* lakukan update package list `apt-get update` dan install aplikasi bind9 `apt-get install bind9 -y`. Berikutnya tambahkan syntax pada file **/etc/bind/named.conf.local**, gambarannya sebagai berikut
+
+![Img 19](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/5.2.jpg)
+
+Lakukan restart bind9 `service bind9 restart`
+
+* Pada uml *MALANG*, masukkan command `service bind9 stop` . Pada client *GRESIK* pastikan pengaturan nameserver mengarah ke IP *MALANG* dan IP *MOJOKERTO*
+
+![Img 20](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/5.5.jpg)
+
+Lakukan ping ke **semeruc12.pw** pada client *GRESIK*
+
+![Img 21](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/5.6.jpg)
+
 ## Soal 6
 
+* Pada *MALANG*, edit file **/etc/bind/jarkom/semeruc12.pw**, sehingga menjadi
+
+![Img 22](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.1.jpg)
+
+Kemudian edit file **/etc/bind/named.conf.options** pada *MALANG*, dan comment **dnssec-validation auto;** dan tambahkan baris berikut pada **/etc/bind/named.conf.options**
+```
+allow-query{any;};
+```
+
+![Img 23](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.2.jpg)
+
+Berikutnya lakukan `service bind9 restart`.
+
+Kemudian edit file **/etc/bind/named.conf.local** menjadi seperti gambar di bawah:
+
+![Img 24](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.3.jpg)
+
+* Pada *MOJOKERTO* edit file **/etc/bind/named.conf.options**, comment **dnssec-validation auto;** dan tambahkan baris berikut pada **/etc/bind/named.conf.options**
+```
+allow-query{any;};
+```
+
+![Img 25](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.5.jpg)
+
+Lalu edit file **/etc/bind/named.conf.local** menjadi seperti gambar di bawah:
+
+![Img 26](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.6.jpg)
+
+Kemudian buat direktori dengan nama delegasi. Copy **db.local** ke direktori pucang dan edit namanya menjadi **gunung.semeruc12.pw**
+```
+mkdir /etc/bind/delegasi
+cp /etc/bind/db.local /etc/bind/delegasi/gunung.semeruc12.pw
+```
+
+Kemudian edit file **gunung.semeruc12.pw**, dan lakukan `service bind9 restart`. Lakukan ping ke domain gunung.semeruc12.pw dari client *GRESIK*
+
+![Img 27](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.7.jpg)
+
+
 ## Soal 7
+
+Edit file **gunung.semeruc12.pw** juga termasuk memasukkan subdomain **naik.gunung**, dan lakukan ping ke domain naik.gunung.semeruc12.pw dari *GRESIK*
+
+![Img 28](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/7.0.jpg)
 
 ## Web Server (Soal 8 - 17)
 
