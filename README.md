@@ -28,9 +28,9 @@
 ## DNS (Soal 1 - 7)
 
 ## Soal 1
-Buka uml MALANG dan update package list `apt-get update` dan lakukan proses instalasi bind9 dengan perintah `apt-get install bind9 -y`.
+Buka uml *MALANG* dan update package list `apt-get update` dan lakukan proses instalasi bind9 dengan perintah `apt-get install bind9 -y`.
 
-Lakukan perintah pada uml MALANG `nano /etc/bind/named.conf.local` dan isi konfigurasi pada **semeruc12.pw** dengan syntax
+Lakukan perintah pada uml *MALANG* `nano /etc/bind/named.conf.local` dan isi konfigurasi pada **semeruc12.pw** dengan syntax
 ```
 zone "semeruc12.pw" {
 	type master;
@@ -64,7 +64,7 @@ Buka file `semeruc12.pw` pada uml MALANG, dan masukan konfigurasi
 
 ![Img 7](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/2.0.jpg)
 
-Lakukan `service bind9 restart` dan cek **ping www.semeruc12.pw** atau **host -t CNAME www.semeruc12.pw**
+Lakukan `service bind9 restart` dan cek **ping www.semeruc12.pw** atau **host -t CNAME www.semeruc12.pw** dari uml *GRESIK*
 
 ![Img 8](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/2.1.jpg)
 ![Img 9](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/2.2.jpg)
@@ -72,6 +72,18 @@ Lakukan `service bind9 restart` dan cek **ping www.semeruc12.pw** atau **host -t
 
 ## Soal 3
 
+Edit file **/etc/bind/jarkom/semeruc12.pw** dengan
+```
+nano /etc/bind/jarkom/semeruc12.pw
+```
+Serta lakukan konfigurasi pada file tersebut
+
+![Img 10](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/3.0.jpg)
+
+Setelah itu lakukan `service bind9 restart` dan ping dari *GRESIK* yaitu `ping penanjakan.semeruc12.pw` atau `host -t CNAME penanajakan.semeruc12.pw`
+
+![Img 11](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/3.1.jpg)
+![Img 12](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/3.2.jpg)
 
 ## Soal 4
 
