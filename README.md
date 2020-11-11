@@ -87,6 +87,42 @@ Setelah itu lakukan `service bind9 restart` dan ping dari *GRESIK* yaitu `ping p
 
 ## Soal 4
 
+Edit file `/etc/bind/named.conf.local` pada *MALANG*
+```
+nano /etc/bind/named.conf.local
+```
+
+Lalu tambahkan konfigurasi berikut ke dalam file named.conf.local
+```
+zone "77.151.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/jarkom/77.151.10.in-addr.arpa";
+};
+```
+
+![Img 13](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.0.jpg)
+
+Copy file **db.local** ke **77.151.10.in-addr.arpa** dan lakukan edit file tersebut.
+
+![Img 14](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.1.jpg)
+
+Setelah itu lakukan `service bind9 restart`
+
+![Img 15](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.2.jpg)
+
+Untuk mengecek apakah konfigurasi sudah benar atau belum, lakukan perintah berikut pada client *GRESIK*
+```
+// Install package dnsutils
+// Pastikan nameserver telah dikembalikan ke settingan awal
+apt-get update
+apt-get install dnsutils
+
+//Kembalikan nameserver agar tersambung dengan MALANG
+host -t PTR 10.151.77.106
+```
+
+![Img 16](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.3.jpg)
+
 ## Soal 5
 
 ## Soal 6
