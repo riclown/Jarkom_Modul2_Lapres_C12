@@ -323,15 +323,27 @@ Hal ini juga dapat diterapkan pada alamat lain yang menuju ke halaman 404.
 
 Buka file **penanjakan.semeruc12.pw.conf** dan tambahkan syntax `Alias "/js" "/var/www/penanjakan.semeruc12.pw/public/javascripts"`
 
-![Img 48](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.0.jpg)
+![Img 48](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.2.jpg)
 
 Setelahnya dapat membuka alamat **penanjakan.semeruc12.pw/public/javascripts/** pada browser
 
-![Img 49](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.1.jpg)
+* Gambar berikut merupakan gambar ketika `folder javascripts` masih dapat dibuka
+
+![Img 49](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.0.jpg)
+
+* Sedangkan gambar berikut merupakan hasil dari no. 11 di mana `directory listing` tidak diperbolehkan
+
+![Img 50](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.4.jpg)
 
 Lalu dapat membuka alamat **penanjakan.semeruc12.pw/js/** pada browser
 
-![Img 51](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.2.jpg)
+* Gambar berikut merupakan gambar ketika `folder javascripts` dengan konfigurasi virtual host `/js/` masih dapat dibuka
+
+![Img 51](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.1.jpg)
+
+* Sedangkan gambar berikut merupakan gambar ketika `folder javascripts` dengan konfigurasi virtual host `/js/` dengan hasil dari no. 11 di mana `directory listing` tidak diperbolehkan.
+
+![Img 51](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.3.jpg)
 
 ## Soal 14
 
