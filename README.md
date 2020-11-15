@@ -104,11 +104,11 @@ zone "77.151.10.in-addr.arpa" {
 
 Copy file **db.local** ke **77.151.10.in-addr.arpa** dan lakukan edit file tersebut.
 
-
+![Img 14](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.1.jpg)
 
 Setelah itu lakukan `service bind9 restart`
 
-
+![Img 15](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.2.jpg)
 
 Untuk mengecek apakah konfigurasi sudah benar atau belum, lakukan perintah berikut pada client *GRESIK*
 ```
@@ -121,7 +121,7 @@ apt-get install dnsutils
 host -t PTR 10.151.77.106
 ```
 
-
+![Img 16](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.3.jpg)
 
 ## Soal 5
 
@@ -183,16 +183,20 @@ mkdir /etc/bind/delegasi
 cp /etc/bind/db.local /etc/bind/delegasi/gunung.semeruc12.pw
 ```
 
-Kemudian edit file **gunung.semeruc12.pw**, dan lakukan `service bind9 restart`. Lakukan ping ke domain gunung.semeruc12.pw dari client *GRESIK*
+Kemudian edit file **gunung.semeruc12.pw**, 
 
-![Img 27](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.7.jpg)
+![Img 27](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.8.jpg)
+
+dan lakukan `service bind9 restart`. Lakukan ping ke domain gunung.semeruc12.pw dari client *GRESIK*
+
+![Img 28](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/6.7.jpg)
 
 
 ## Soal 7
 
 Edit file **gunung.semeruc12.pw** juga termasuk memasukkan subdomain **naik.gunung**, dan lakukan ping ke domain naik.gunung.semeruc12.pw dari *GRESIK*
 
-![Img 28](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/7.0.jpg)
+![Img 29](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/7.0.jpg)
 
 ## Web Server (Soal 8 - 17)
 
@@ -202,56 +206,56 @@ Pada uml *PROBOLINGGO*, lakukan instalasi `apache2` dan `php`. Pada hal ini, php
 
 Pindah ke directory `cd /etc/apache2/sites-available`, dan copy file default **000-default.conf** ke **semeruc12.pw.conf**. lakukan edit file shingga menjadi
 
-![Img 29](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/8.0.jpg)
+![Img 30](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/8.0.jpg)
 
 Aktifkan konfigurasi `a2ensite semeruc12.pw` dan restart apache. Setlahnya dapat membuka **semeruc12.pw** di browser
 
-![Img 30](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/8.1.jpg)
+![Img 31](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/8.1.jpg)
 
 
 ## Soal 9
 
 Jalankan perintah `a2enmod rewrite` dan service apache2. Masih di file yang sama, tambahkan syntax berikut di file **semeruc12.pw.conf**
 
-![Img 31](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.0.jpg)
+![Img 32](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.0.jpg)
 
 Untuk mula-mula, maka akan tampil di browser dengan alamat **semeruc12.pw.con/index.php/home**
 
-![Img 32](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.3.jpg)
+![Img 33](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.3.jpg)
 
 Pindah ke directory **/var/www/semeruc12.pw** dan buat file .htaccess dengan isi file
 
-![Img 33](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.2.jpg)
+![Img 34](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.2.jpg)
 
 Lakukan service apache restart dan kembali buka browser dengan alamat **semeruc12.pw.con/home**
 
-![Img 34](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.1.jpg)
+![Img 35](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.1.jpg)
 
 
 ## Soal 10
 
 Pindah ke directory **/etc/apache2/sites-available** kemudian buka file semeruc12.pw dan tambahkan hingga menjadi
 
-![Img 35](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.3.jpg)
+![Img 36](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.3.jpg)
 
 Lakukan restart apache2, sehingga hasilnya berupa
 
-![Img 36](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.0.jpg)
-![Img 37](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.1.jpg)
-![Img 38](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.2.jpg)
+![Img 37](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.0.jpg)
+![Img 38](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.1.jpg)
+![Img 39](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.2.jpg)
 
 ## Soal 11
 
 Sama halnya seperti nomor 10 namun terdapat perubahan tanda `+` menjadi `-`, dan lakukan hal yang sama untuk folder yang dimaksud
 
-![Img 39](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.6.jpg)
+![Img 40](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.6.jpg)
 
 Lakukan restart apache2, sehingga hasilnya berupa
 
-![Img 40](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.0.jpg)
-![Img 41](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.1.jpg)
-![Img 42](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.2.jpg)
-![Img 43](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.3.jpg)
+![Img 41](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.0.jpg)
+![Img 42](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.1.jpg)
+![Img 43](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.2.jpg)
+![Img 44](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.3.jpg)
 
 ## Soal 12
 
@@ -269,3 +273,6 @@ Lakukan restart apache2, sehingga hasilnya berupa
 ## Soal 17
 
 ### Kendala yang  dihadapi saat pengerjaan
+* Penggunaan VPN peserta yang cukup sering bermasalah, dapat mati secara tiba-tiba, terutama saat pengerjaan malam hingga dini hari, ataupun kecepatan VPN yang sering melambat di sore hingga menjelang malam hari. Pihak DPTSI ITS selalu melakukan semacam "konfigurasi ulang internet" sekitar jam 01.00 - 04.00 WIB, sehingga dapat berdampak ke VPN.
+* Jaringan internet peserta yang cukup sering mati mendadak, maka antisipasi berupa *backup* sangat diperlukan.
+* Pembelajaran kembali mengenai struktur .htaccess ketika module rewrite.
