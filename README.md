@@ -204,6 +204,9 @@ Edit file **gunung.semeruc12.pw** juga termasuk memasukkan subdomain **naik.gunu
 
 ![Img 29](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/7.0.jpg)
 
+
+Kembali ke ![Daftar Isi](#daftar-isi)
+
 ## Web Server (Soal 8 - 17)
 
 ## Soal 8
@@ -435,7 +438,7 @@ Lakukan `service apache2 restart` dan kembali buka browser dengan alamat **penan
 
 ![Img 36](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/17.1.jpg)
 
-
+Kembali ke ![Daftar Isi](#daftar-isi)
 
 
 ### Kendala yang  dihadapi saat pengerjaan
