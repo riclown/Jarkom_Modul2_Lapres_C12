@@ -104,11 +104,11 @@ zone "77.151.10.in-addr.arpa" {
 
 Copy file **db.local** ke **77.151.10.in-addr.arpa** dan lakukan edit file tersebut.
 
-![Img 14](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.1.jpg)
+
 
 Setelah itu lakukan `service bind9 restart`
 
-![Img 15](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.2.jpg)
+
 
 Untuk mengecek apakah konfigurasi sudah benar atau belum, lakukan perintah berikut pada client *GRESIK*
 ```
@@ -121,7 +121,7 @@ apt-get install dnsutils
 host -t PTR 10.151.77.106
 ```
 
-![Img 16](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/4.3.jpg)
+
 
 ## Soal 5
 
