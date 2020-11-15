@@ -27,7 +27,11 @@
 
 ## DNS (Soal 1 - 7)
 
-Konfigurasi `semeruyyy.pw` menjadi `semeruc12.pw` sesuai dengan nama kelompok.
+* Konfigurasi `semeruyyy.pw` menjadi `semeruc12.pw` sesuai dengan nama kelompok.
+* *IP Probolinggo* C12: 10.151.77.108
+* topo.sh:
+
+![Img 0](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/0.0.jpg)
 
 ## Soal 1
 Buka uml *MALANG* dan update package list `apt-get update` dan lakukan proses instalasi bind9 dengan perintah `apt-get install bind9 -y`.
