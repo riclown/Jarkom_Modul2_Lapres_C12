@@ -239,6 +239,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^home$ /index.php/home [L]
 ```
 
+**Keterangan:**
+* `RewriteEngine On` = untuk flag bahwa menggunakan module rewrite
+* `RewriteCond %{REQUEST_FILENAME} !-f` = aturan tidak akan jalan ketika yang diakses adalah file (f)
+* `RewriteCond %{REQUEST_FILENAME} !-d` = aturan tidak akan jalan ketika yang diakses adalah directory (d)
+* `RewriteRule ^home$ /index.php/home [L]` = `^home$ /index.php/home[L]` adalah parameter input yang akan dicari oleh webserver
+
+
 ![Img 34](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.2.jpg)
 
 Lakukan `service apache2 restart` dan kembali buka browser dengan alamat **semeruc12.pw/home**
@@ -411,6 +418,12 @@ RewriteEngine OnRewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^/?(.*)semeru(.*)\.jpg$ /public/images/semeru.jpg [R=301,L]
 ```
+
+**Keterangan:**
+* `RewriteEngine On` = untuk flag bahwa menggunakan module rewrite
+* `RewriteCond %{REQUEST_FILENAME} !-f` = aturan tidak akan jalan ketika yang diakses adalah file (f)
+* `RewriteRule ^/?(.*)semeru(.*)\.jpg$ /public/images/semeru.jpg [R=301,L]` = `^/?(.*)semeru(.*)\.jpg$ /public/images/semeru.jpg [R=301,L]` adalah parameter input yang akan dicari oleh webserver yaitu segala string `semeru.jpg` pada folder public/images.
+
 
 ![Img 35](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/17.0.jpg)
 
