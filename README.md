@@ -405,6 +405,20 @@ Lakukan restart apache2 dan masukkan *IP Probolinggo* pada browser
 
 ## Soal 17
 
+Jalankan perintah `a2enmod rewrite` dan service apache2 dengan `service apache2 restart`. Pindah ke directory **/var/www/penanjakan.semeruc12.pw** dan buat file .htaccess dengan isi file
+```
+RewriteEngine OnRewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^/?(.*)semeru(.*)\.jpg$ /public/images/semeru.jpg [R=301,L]
+```
+
+![Img 35](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/17.0.jpg)
+
+Lakukan `service apache2 restart` dan kembali buka browser dengan alamat **penanjakan.semeruc12.pw/public/images/bukansemeru.jpg** (*bukasemeru.jpg* dapat diganti dengan string lain yang juga mengandung kata *semeru* seperi *lagicarisemeru.jpg* dll), maka akan diarahkan ke alamat **penanjakan.semeruc12.pw/public/images/semeru.jpg**
+
+![Img 36](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/17.1.jpg)
+
+
 
 
 ### Kendala yang  dihadapi saat pengerjaan
