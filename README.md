@@ -265,22 +265,22 @@ Lakukan `service apache2 restart`, sehingga hasilnya berupa
 
 ## Soal 11
 
-Buka file **penanjakan.semeruc12.pw.conf** yang dimaksud dengan menambahkan syntax
+Buka file **penanjakan.semeruc12.pw.conf** dengan `cd /etc/apache2/sites-available` dan ketikkan `nano penanjakan.semeruc12.pw.conf` yang dimaksud dengan menambahkan syntax
 ```
  <Directory /var/www/penanjakan.semeruc12.pw/public>
      Options +Indexes
  </Directory>
  
  <Directory /var/www/penanjakan.semeruc12.pw/public/javascripts>
-     Options +Indexes
+     Options -Indexes
  </Directory>
  
  <Directory /var/www/penanjakan.semeruc12.pw/public/css>
-     Options +Indexes
+     Options -Indexes
  </Directory>
  
  <Directory /var/www/penanjakan.semeruc12.pw/public/images>
-     Options +Indexes
+     Options -Indexes
  </Directory>
 ```
 
@@ -295,9 +295,43 @@ Lakukan `service apache2 restart`, sehingga hasilnya berupa
 
 ## Soal 12
 
+Disediakan file error **404.html** lain untuk menggantkan file **404.html** sebelumnya. Buka file **penanjakan.semeruc12.pw.conf** dan tambahkan syntax, syntax diambil dari situs lain.
+```
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+ErrorDocument 404 /errors/404.html
+
+<Files "errors/404.html">
+     <If "-z %{ENV:REDIRECT_STATUS}">
+            RedirectMatch 404 ^/errors/404.html$
+     </If>
+</Files>
+```
+
+![Img 45](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/12.1.jpg)
+
+Setlah itu, dapat membuka browser untuk melihat perubahan yang ada dengan mengetikkan **penanjakan.semeruc12.pw/errors/404.html**
+
+![Img 46](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/12.0.jpg)
+
+Hal ini juga dapat diterapkan pada alamat lain yang menuju ke halaman 404.
+
+![Img 47](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/12.2.jpg)
 
 ## Soal 13
 
+Buka file **penanjakan.semeruc12.pw.conf** dan tambahkan syntax `Alias "/js" "/var/www/penanjakan.semeruc12.pw/public/javascripts"`
+
+![Img 48](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.0.jpg)
+
+Setelahnya dapat membuka alamat **penanjakan.semeruc12.pw/public/javascripts/** pada browser
+
+![Img 49](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.1.jpg)
+
+Lalu dapat membuka alamat **penanjakan.semeruc12.pw/js/** pada browser
+
+![Img 51](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/13.2.jpg)
 
 ## Soal 14
 
