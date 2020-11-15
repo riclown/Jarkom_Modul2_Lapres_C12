@@ -27,6 +27,8 @@
 
 ## DNS (Soal 1 - 7)
 
+Konfigurasi `semeruyyy.pw` menjadi `semeruc12.pw` sesuai dengan nama kelompok.
+
 ## Soal 1
 Buka uml *MALANG* dan update package list `apt-get update` dan lakukan proses instalasi bind9 dengan perintah `apt-get install bind9 -y`.
 
@@ -347,12 +349,63 @@ Lalu dapat membuka alamat **penanjakan.semeruc12.pw/js/** pada browser
 
 ## Soal 14
 
+Pindah ke *directory* `/etc/apache2/sites-available` menggunakan perintah
+```
+cd /etc/apache2/sites-available
+```
+
+Buka file **naik.gunung.semeruc12.pw.conf** dan ubah port yang awalnya `80` menjadi `8888`, serta ubah *DocumentRoot* yang awalnya `/var/www/html` menjadi `/var/www/naik.gunung.semeruc12.pw`, seperti gambar berikut
+
+![Img 52](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/14.1.jpg)
+
+Tambahkan port 8888 pada file **ports.conf**. File ports.conf berada pada directory `/etc/apache2`. Cara menambahkannya sebagai berikut pada gambar
+
+![Img 53](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/14.2.jpg)
+
+Lalu aktifkan konfigurasi **naik.gunung.semeruc12.pw** dan lakukan `service apache2 restart`. dan buka browser dengan alamat **naik.gunung.semeruc12.pw**
+
+![Img 54](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/14.0.jpg)
+
 
 ## Soal 15
 
+Buka kembali file **naik.gunung.semeruc12.pw.conf** dengan `cd /etc/apache2/sites-aailable/` dan `nano`, dan masukkan syntax berikut sesuai pada gambar. Syntax juga berasal dari situs lain.
+```
+<Directory "/var/www/naik.gunung.semeruc12.pw">
+      AuthType Basic
+      AuthName "Restricted Content"
+      AuthUserFile /etc/apache2/.htpasswd
+      Require valid-user
+</Directory>
+```
+
+Konfigurasikan username dan password sesuai soal.
+
+![Img 55](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/15.2.jpg)
+
+Lakukan `service apache2 restart`, dan buka broowser dengan memasukkan alamat **naik.gunung.semeruc12.pw:8888**  (:8888 sebagai port).
+
+![Img 56](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/15.0.jpg)
+
+Maka akan diminta username dan password, username berupa **semeru** dan password **kuynaikgunung**, setalhnya maka situs dapat dibuka
+
+![Img 57](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/15.1.jpg)
+
+
 ## Soal 16
 
+Pindah ke direktori `cd /etc/apache2/sites-available` dan buka file 000-default.conf. Ganti *DocumentRoot* menjadi `/var/www/semeruc12.pw` seperti pada gambar
+
+![Img 58](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/16.1.jpg)
+
+Lakukan restart apache2 dan masukkan *IP Probolinggo* pada browser
+
+![Img 59](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/16.0.jpg)
+
+
 ## Soal 17
+
+
 
 ### Kendala yang  dihadapi saat pengerjaan
 * Penggunaan VPN peserta yang cukup sering bermasalah, dapat mati secara tiba-tiba, terutama saat pengerjaan malam hingga dini hari, ataupun kecepatan VPN yang sering melambat di sore hingga menjelang malam hari. Pihak DPTSI ITS selalu melakukan semacam "konfigurasi ulang internet" sekitar jam 01.00 - 04.00 WIB, sehingga dapat berdampak ke VPN.
