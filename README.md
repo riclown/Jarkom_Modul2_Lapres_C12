@@ -215,7 +215,13 @@ Aktifkan konfigurasi `a2ensite semeruc12.pw` dan restart apache. Setlahnya dapat
 
 ## Soal 9
 
-Jalankan perintah `a2enmod rewrite` dan service apache2. Masih di file yang sama, tambahkan syntax berikut di file **semeruc12.pw.conf**
+Jalankan perintah `a2enmod rewrite` dan service apache2 dengan `service apache2 restart`. Masih di file yang sama, tambahkan syntax berikut di file **semeruc12.pw.conf**
+```
+ <Directory /var/www/semeruc12.pw>
+     Options +FollowSymLinks -Multiviews
+     AllowOverride All
+ </Directory>
+```
 
 ![Img 32](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.0.jpg)
 
@@ -224,21 +230,34 @@ Untuk mula-mula, maka akan tampil di browser dengan alamat **semeruc12.pw.con/in
 ![Img 33](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.3.jpg)
 
 Pindah ke directory **/var/www/semeruc12.pw** dan buat file .htaccess dengan isi file
+```
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^home$ /index.php/home [L]
+```
 
 ![Img 34](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.2.jpg)
 
-Lakukan service apache restart dan kembali buka browser dengan alamat **semeruc12.pw.con/home**
+Lakukan `service apache2 restart` dan kembali buka browser dengan alamat **semeruc12.pw/home**
 
 ![Img 35](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/9.1.jpg)
 
 
 ## Soal 10
 
-Pindah ke directory **/etc/apache2/sites-available** kemudian buka file semeruc12.pw dan tambahkan hingga menjadi
+Pindah ke directory **/etc/apache2/sites-available** kemudian buka file **penanjakan.semeruc12.pw.conf** dan tambahkan syntax
+```
+ <Directory /var/www/penanjakan.semeruc12.pw>
+     Options +FollowSymLinks -Multiviews
+     AllowOverride All
+ </Directory>
+```
+hingga menjadi
 
 ![Img 36](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.3.jpg)
 
-Lakukan restart apache2, sehingga hasilnya berupa
+Lakukan `service apache2 restart`, sehingga hasilnya berupa
 
 ![Img 37](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.0.jpg)
 ![Img 38](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/10.1.jpg)
@@ -246,11 +265,28 @@ Lakukan restart apache2, sehingga hasilnya berupa
 
 ## Soal 11
 
-Sama halnya seperti nomor 10 namun terdapat perubahan tanda `+` menjadi `-`, dan lakukan hal yang sama untuk folder yang dimaksud
+Buka file **penanjakan.semeruc12.pw.conf** yang dimaksud dengan menambahkan syntax
+```
+ <Directory /var/www/penanjakan.semeruc12.pw/public>
+     Options +Indexes
+ </Directory>
+ 
+ <Directory /var/www/penanjakan.semeruc12.pw/public/javascripts>
+     Options +Indexes
+ </Directory>
+ 
+ <Directory /var/www/penanjakan.semeruc12.pw/public/css>
+     Options +Indexes
+ </Directory>
+ 
+ <Directory /var/www/penanjakan.semeruc12.pw/public/images>
+     Options +Indexes
+ </Directory>
+```
 
 ![Img 40](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.6.jpg)
 
-Lakukan restart apache2, sehingga hasilnya berupa
+Lakukan `service apache2 restart`, sehingga hasilnya berupa
 
 ![Img 41](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.0.jpg)
 ![Img 42](https://github.com/riclown/Jarkom_modul2_praktikum_C12/blob/main/img/11.1.jpg)
